@@ -73,10 +73,13 @@ public class TestApp {
     public void testNacimiento(){
         User chahua = new User(29,3,2001);
         User chahua1 = new User(29,3,2010);
+        User chahua2 = new User(11,5,2011);
         Consulta consulta = new Consulta(4,3,2000,chahua);
         Consulta consulta1 = new Consulta(4,2,2010,chahua1);
+        Consulta consulta2 = new Consulta(4,5,2011,chahua2);
         consulta.anteriorNacimiento();
         consulta1.anteriorNacimiento();
+        consulta2.anteriorNacimiento();
 
     }
   
