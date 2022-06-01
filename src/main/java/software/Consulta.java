@@ -45,7 +45,7 @@ public class Consulta {
        if(user.getMes()<1) throw new DateTimeException(comment);
        if(mes>12) throw new DateTimeException(comment);
        if(mes<1) throw new DateTimeException(comment);*/
-       return;
+       //return;
        // if(user.getDia()>31 || user.getDia() < 1 || dia>31 || dia <1) throw new DateTimeException(comment);
        // if(user.getMes()>12 || user.getMes()<1 || mes>12 || mes<1) throw new DateTimeException(comment);
    }
