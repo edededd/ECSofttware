@@ -33,7 +33,7 @@ public class TestApp {
         Assert.assertEquals(chahua.getMes(),3);
         Assert.assertEquals(consulta.getAnio(),2019);
         Assert.assertEquals(consulta.getDia(),4);
-        Assert.assertEquals(chahua.getMes(),3);
+        Assert.assertEquals(consulta.getMes(),3);
 
     }
   
