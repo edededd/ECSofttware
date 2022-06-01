@@ -32,9 +32,21 @@ public class Consulta {
 
    public void correctoFormato(){
        String comment ="Haz tenido un error de escritura de tu fecha de nacimiento";
-       if(user.getAnio()<1000 || user.getAnio()>2022 || anio<1000 || anio>2022) throw new DateTimeException(comment);
-       if(user.getDia()>31 || user.getDia() < 1 || dia>31 || dia <1) throw new DateTimeException(comment);
-       if(user.getMes()>12 || user.getMes()<1 || mes>12 || mes<1) throw new DateTimeException(comment);
+       // if(user.getAnio()<1000 || user.getAnio()>2022 || anio<1000 || anio>2022) throw new DateTimeException(comment);
+       if(user.getAnio()<1000) throw new DateTimeException(comment);
+       if(user.getAnio()>2022) throw new DateTimeException(comment);
+       if(anio<1000) throw new DateTimeException(comment);
+       if(anio>2022) throw new DateTimeException(comment);
+       if(user.getDia()>31) throw new DateTimeException(comment);
+       if(user.getDia()<1) throw new DateTimeException(comment);
+       if(dia>31) throw new DateTimeException(comment);
+       if(dia<1) throw new DateTimeException(comment);
+       if(user.getMes()>12) throw new DateTimeException(comment);
+       if(user.getMes()<1) throw new DateTimeException(comment);
+       if(mes>12) throw new DateTimeException(comment);
+       if(mes<1) throw new DateTimeException(comment); 
+       // if(user.getDia()>31 || user.getDia() < 1 || dia>31 || dia <1) throw new DateTimeException(comment);
+       // if(user.getMes()>12 || user.getMes()<1 || mes>12 || mes<1) throw new DateTimeException(comment);
    }
 
    public int isOlder(){
