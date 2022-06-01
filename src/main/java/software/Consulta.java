@@ -27,7 +27,10 @@ public class Consulta {
     int difMes= mes - user.getMes();
     int difDia= dia - user.getDia();
     String comment = "Haz colocado mal tu fecha de nacimiento, asegurate de que no sea despues de la fecha actual";
-    if(difAge<0 || (difAge==0 && difMes <0) || (difAge==0 && difMes==0 && difDia<0)){throw new DateTimeException(comment);}
+    if(difAge<0) {throw new DateTimeException(comment);}
+    if(difAge==0 && difMes<0) {throw new DateTimeException(comment);}
+    if(difAge==0 && difMes==0 && difDia<0) {throw new DateTimeException(comment);}
+    //if(difAge<0 || (difAge==0 && difMes <0) || (difAge==0 && difMes==0 && difDia<0)){throw new DateTimeException(comment);}
     }
 
    public void correctoFormato(){
