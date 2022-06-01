@@ -62,15 +62,7 @@ public class Consulta {
        int difDia= dia - user.getDia();
        correctoFormato();
        anteriorNacimiento();
-       if(difAge > 18) return 1;
-       else if(difAge ==18){
-            if(difMes > 0) return 1;
-            else if(difMes == 0){
-               if(difDia >= 0) return 1;
-               else return 0;
-            }
-            else return 0;
-       }
+       if(difAge > 18 || (difAge==18 && difMes>0) || (difAge==18 && difMes==0 && difDia>=0)) return 1;
        else return 0;
    }
 }
