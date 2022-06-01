@@ -7,11 +7,11 @@ public class Consulta {
    private int anio;
    private User user;
 
-   public Consulta(int _dia,int _mes,int _anio, User _user){
-       dia=_dia;
-       mes=_mes;
-       anio=_anio;
-       user=_user;
+   public Consulta(int dia1,int mes1,int anio1, User user1){
+       dia=dia1;
+       mes=mes1;
+       anio=anio1;
+       user=user1;
    }
    public int getDia(){
        return dia;
@@ -27,41 +27,39 @@ public class Consulta {
     int difAge = anio-user.getAnio();
     int difMes= mes - user.getMes();
     int difDia= dia - user.getDia();
-    if(difAge<0){throw new DateTimeException("Haz colocado mal tu fecha de nacimiento, asegurate de que no sea despues de la fecha actual");}
+    String comment = "Haz colocado mal tu fecha de nacimiento, asegurate de que no sea despues de la fecha actual";
+    if(difAge<0){throw new DateTimeException(comment);}
     else if(difAge==0){
-        if(difMes < 0){throw new DateTimeException("Haz colocado mal tu fecha de nacimiento, asegurate de que no sea despues de la fecha actual");}
+        if(difMes < 0){throw new DateTimeException(comment);}
         else if(difMes==0){
-            if(difDia<0){throw new DateTimeException("Haz colocado mal tu fecha de nacimiento, asegurate de que no sea despues de la fecha actual");}
-            else return;
+            if(difDia<0){throw new DateTimeException(comment);}
         }
-        else return;
     }
-    else return;
    }
 
    public void correctoFormato(){
+       String comment ="Haz tenido un error de escritura de tu fecha de nacimiento";
        if(user.getAnio()<1000 || user.getAnio()>2022 || anio<1000 || anio>2022){
         try {
-            throw new DataFormatException("Haz tenido un error de escritura de tu fecha de nacimiento");
+            throw new DataFormatException(comment);
         } catch (DataFormatException e) {
             e.printStackTrace();
         }
        }
        if(user.getDia()>31 || user.getAnio() < 1 || dia>31 || dia <1){
         try {
-            throw new DataFormatException("Haz tenido un error de escritura de tu fecha de nacimiento");
+            throw new DataFormatException(comment);
         } catch (DataFormatException e) {
             e.printStackTrace();
         }
        }
        if(user.getMes()>12 || user.getMes()<1 || mes>12 || mes<1){
         try {
-            throw new DataFormatException("Haz tenido un error de escritura de tu fecha de nacimiento");
+            throw new DataFormatException(comment);
         } catch (DataFormatException e) {
             e.printStackTrace();
         }
        }
-       return;
    }
 
    public int isOlder(){
