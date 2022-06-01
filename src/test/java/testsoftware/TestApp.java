@@ -31,6 +31,7 @@ public class TestApp {
 
     @Test(expectedExceptions = DateTimeException.class)
     public void testhrows(){
+        //test exceptions
         User chahua = new User(29,3,999);
         User chahua1 = new User(29,3,2023);
         User chahua2 = new User(5,13,2020);
