@@ -1,6 +1,5 @@
 package software;
 import  java.time.DateTimeException;
-import  java.util.zip.DataFormatException;
 public class Consulta {
    private int dia;
    private int mes;
@@ -33,27 +32,9 @@ public class Consulta {
 
    public void correctoFormato(){
        String comment ="Haz tenido un error de escritura de tu fecha de nacimiento";
-       if(user.getAnio()<1000 || user.getAnio()>2022 || anio<1000 || anio>2022){
-        try {
-            throw new DataFormatException(comment);
-        } catch (DataFormatException e) {
-            e.printStackTrace();
-        }
-       }
-       if(user.getDia()>31 || user.getAnio() < 1 || dia>31 || dia <1){
-        try {
-            throw new DataFormatException(comment);
-        } catch (DataFormatException e) {
-            e.printStackTrace();
-        }
-       }
-       if(user.getMes()>12 || user.getMes()<1 || mes>12 || mes<1){
-        try {
-            throw new DataFormatException(comment);
-        } catch (DataFormatException e) {
-            e.printStackTrace();
-        }
-       }
+       if(user.getAnio()<1000 || user.getAnio()>2022 || anio<1000 || anio>2022) throw new DateTimeException(comment);
+       if(user.getDia()>31 || user.getAnio() < 1 || dia>31 || dia <1) throw new DateTimeException(comment);
+       if(user.getMes()>12 || user.getMes()<1 || mes>12 || mes<1) throw new DateTimeException(comment);
    }
 
    public int isOlder(){
