@@ -29,11 +29,8 @@ public class Consulta {
     int difDia= dia - user.getDia();
     String comment = "Haz colocado mal tu fecha de nacimiento, asegurate de que no sea despues de la fecha actual";
     if(difAge<0){throw new DateTimeException(comment);}
-    else if(difAge==0){
-        if(difMes < 0){throw new DateTimeException(comment);}
-        else if(difMes==0 && difDia<0){
-            throw new DateTimeException(comment);
-        }
+    else if(difAge==0 && difMes <0){
+        if(difMes < 0 || (difMes==0 && difDia<0)){throw new DateTimeException(comment);}
     }
    }
 
