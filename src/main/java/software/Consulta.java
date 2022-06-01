@@ -35,6 +35,7 @@ public class Consulta {
        // if(user.getAnio()<1000 || user.getAnio()>2022 || anio<1000 || anio>2022) throw new DateTimeException(comment);
        if(user.getAnio()<1000) throw new DateTimeException(comment);
        else if(user.getAnio()>2022) throw new DateTimeException(comment);
+       else {}
        /*if(anio<1000) throw new DateTimeException(comment);
        if(anio>2022) throw new DateTimeException(comment);
        if(user.getDia()>31) throw new DateTimeException(comment);
