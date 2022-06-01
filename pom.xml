@@ -14,7 +14,6 @@
         <sonar.organization>edededd</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
-  <id>coverage</id>
   <build>
    <plugins>
     <plugin>
