@@ -1,9 +1,10 @@
+package software;
 public class User{
    private int dia;
    private int mes;
    private int anio;
 
-   User(int _dia,int _mes,int _anio){
+   public User(int _dia,int _mes,int _anio){
        dia=_dia;
        mes=_mes;
        anio=_anio;

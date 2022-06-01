@@ -1,3 +1,4 @@
+package software;
 import  java.time.DateTimeException;
 import  java.util.zip.DataFormatException;
 public class Consulta {
@@ -6,7 +7,7 @@ public class Consulta {
    private int anio;
    private User user;
 
-   Consulta(int _dia,int _mes,int _anio, User _user){
+   public Consulta(int _dia,int _mes,int _anio, User _user){
        dia=_dia;
        mes=_mes;
        anio=_anio;

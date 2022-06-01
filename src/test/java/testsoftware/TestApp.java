@@ -1,8 +1,12 @@
+package testsoftware;
 import java.time.DateTimeException;
 import java.util.zip.DataFormatException;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import software.Consulta;
+import software.User;
 public class TestApp {
     @Test
     public void test(){
