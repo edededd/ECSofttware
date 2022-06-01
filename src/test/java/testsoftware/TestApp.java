@@ -20,6 +20,7 @@ public class TestApp {
         Consulta consulta4 = new Consulta(4,3,2019,chahua);
         Consulta consulta5 = new Consulta(1,6,2022,chahua3);
         Consulta consulta6 = new Consulta(1,6,2020,chahua3);
+        Consulta consulta7 = new Consulta(1,6,2005,chahua3);
         Assert.assertEquals(consulta.isOlder(), 1);
         Assert.assertEquals(consulta1.isOlder(), 1);
         Assert.assertEquals(consulta2.isOlder(), 1);
@@ -27,6 +28,7 @@ public class TestApp {
         Assert.assertEquals(consulta4.isOlder(), 0);
         Assert.assertEquals(consulta5.isOlder(), 1);
         Assert.assertEquals(consulta6.isOlder(), 1);
+        Assert.assertEquals(consulta7.isOlder(), 0);
 
     }
 
