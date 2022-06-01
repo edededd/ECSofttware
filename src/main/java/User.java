@@ -1,12 +1,12 @@
 public class User{
    private int dia;
    private int mes;
-   private int año;
+   private int anio;
 
-   User(int dia_,int mes_,int año_){
-       dia=dia_;
-       mes=mes_;
-       año=año_;
+   User(int _dia,int _mes,int _anio){
+       dia=_dia;
+       mes=_mes;
+       anio=_anio;
    }
    public int getDia(){
        return dia;
@@ -14,8 +14,8 @@ public class User{
    public int getMes(){
     return mes;
    }
-   public int getAño(){
-    return año;
+   public int getAnio(){
+    return anio;
    }
 
 }
