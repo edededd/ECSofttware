@@ -31,12 +31,25 @@ public class TestApp {
 
     @Test(expectedExceptions = DateTimeException.class)
     public void testhrows(){
-        User chahua = new User(29,3,2001);
-        User chahua1 = new User(29,3,999);
-        Consulta consulta = new Consulta(1,6,10000,chahua);
+        User chahua = new User(29,3,999);
+        User chahua1 = new User(29,3,2023);
+        User chahua2 = new User(5,13,2020);
+        User chahua3 = new User(5,0,2020);
+        User chahua4 = new User(0,1,2020);
+        User chahua5 = new User(34,1,2020);
+        Consulta consulta = new Consulta(1,6,2020,chahua);
         Consulta consulta1 = new Consulta(1,34,10000,chahua1);
+        Consulta consulta2 = new Consulta(1,10,2019,chahua2);
+        Consulta consulta3 = new Consulta(1,10,2019,chahua3);
+        Consulta consulta4 = new Consulta(1,10,2019,chahua4);
+        Consulta consulta5 = new Consulta(1,10,2019,chahua5);
         consulta.correctoFormato();
         consulta1.correctoFormato();
+        consulta2.correctoFormato();
+        consulta3.correctoFormato();
+        consulta4.correctoFormato();
+        consulta5.correctoFormato();
+
     }
 
     @Test
