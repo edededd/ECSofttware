@@ -1,6 +1,5 @@
 package testsoftware;
 import java.time.DateTimeException;
-import java.util.zip.DataFormatException;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -20,6 +19,7 @@ public class TestApp {
         Consulta consulta3 = new Consulta(1,5,2022,chahua2);
         Consulta consulta4 = new Consulta(4,3,2019,chahua);
         Consulta consulta5 = new Consulta(1,6,2022,chahua3);
+        Consulta consulta6 = new Consulta(1,6,2022,chahua3);
         Assert.assertEquals(consulta.isOlder(), 1);
         Assert.assertEquals(consulta1.isOlder(), 1);
         Assert.assertEquals(consulta2.isOlder(), 1);
