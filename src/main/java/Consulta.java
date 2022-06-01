@@ -10,6 +10,7 @@ public class Consulta {
        dia=_dia;
        mes=_mes;
        anio=_anio;
+       user=_user;
    }
    public int getDia(){
        return dia;
@@ -26,36 +27,36 @@ public class Consulta {
     int difMes= mes - user.getMes();
     int difDia= dia - user.getDia();
     if(difAge<0){throw new DateTimeException("Haz colocado mal tu fecha de nacimiento, asegurate de que no sea despues de la fecha actual");}
-    else {
+    else if(difAge==0){
         if(difMes < 0){throw new DateTimeException("Haz colocado mal tu fecha de nacimiento, asegurate de que no sea despues de la fecha actual");}
-        else{
+        else if(difMes==0){
             if(difDia<0){throw new DateTimeException("Haz colocado mal tu fecha de nacimiento, asegurate de que no sea despues de la fecha actual");}
+            else return;
         }
+        else return;
     }
+    else return;
    }
 
    public void correctoFormato(){
-       if(user.getAnio()<1000 || user.getAnio()>2022){
+       if(user.getAnio()<1000 || user.getAnio()>2022 || anio<1000 || anio>2022){
         try {
             throw new DataFormatException("Haz tenido un error de escritura de tu fecha de nacimiento");
         } catch (DataFormatException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
        }
-       if(user.getDia()>31 || user.getAnio() < 1){
+       if(user.getDia()>31 || user.getAnio() < 1 || dia>31 || dia <1){
         try {
             throw new DataFormatException("Haz tenido un error de escritura de tu fecha de nacimiento");
         } catch (DataFormatException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
        }
-       if(user.getMes()>12 || user.getMes()<1){
+       if(user.getMes()>12 || user.getMes()<1 || mes>12 || mes<1){
         try {
             throw new DataFormatException("Haz tenido un error de escritura de tu fecha de nacimiento");
         } catch (DataFormatException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
        }
