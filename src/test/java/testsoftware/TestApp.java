@@ -68,5 +68,16 @@ public class TestApp {
         Assert.assertEquals(consulta.getMes(),3);
 
     }
+
+    @Test(expectedExceptions = DateTimeException.class)
+    public void testNacimiento(){
+        User chahua = new User(29,3,2001);
+        User chahua1 = new User(29,3,2010);
+        Consulta consulta = new Consulta(4,3,2000,chahua);
+        Consulta consulta1 = new Consulta(4,2,2010,chahua1);
+        consulta.anteriorNacimiento();
+        consulta1.anteriorNacimiento();
+
+    }
   
 }
