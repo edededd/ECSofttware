@@ -9,7 +9,7 @@ import software.Consulta;
 import software.User;
 public class TestApp {
     @Test
-    public void test1(){
+    public void testOlder(){
         User chahua = new User(29,3,2001);
         User chahua1 = new User(12,4,2004);
         User chahua2 = new User(1,6,2004);
@@ -29,9 +29,14 @@ public class TestApp {
 
     }
 
-    @Test
-    public void test2(){
-
+    @Test(expectedExceptions = DateTimeException.class)
+    public void testhrows(){
+        User chahua = new User(29,3,2001);
+        User chahua1 = new User(29,3,999);
+        Consulta consulta = new Consulta(1,6,10000,chahua);
+        Consulta consulta1 = new Consulta(1,34,10000,chahua1);
+        consulta.correctoFormato();
+        consulta1.correctoFormato();
     }
 
     @Test
