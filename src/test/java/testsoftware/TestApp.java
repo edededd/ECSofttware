@@ -49,12 +49,14 @@ public class TestApp {
         Consulta consulta3 = new Consulta(1,10,2025,chahua3);
         Consulta consulta4 = new Consulta(1,10,2019,chahua4);
         Consulta consulta5 = new Consulta(1,10,2019,chahua5);
+        Consulta consulta6 = new Consulta(34,10,2019,chahua5);
         assertThrows(DateTimeException.class, ()->consulta.correctoFormato());
         assertThrows(DateTimeException.class, ()->consulta1.correctoFormato());
         assertThrows(DateTimeException.class, ()->consulta2.correctoFormato());
         assertThrows(DateTimeException.class, ()->consulta3.correctoFormato());
         assertThrows(DateTimeException.class, ()->consulta4.correctoFormato());
         assertThrows(DateTimeException.class, ()->consulta5.correctoFormato());
+        assertThrows(DateTimeException.class, ()->consulta6.correctoFormato());
 
     }
 
