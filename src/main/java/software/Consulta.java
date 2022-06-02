@@ -30,6 +30,7 @@ public class Consulta {
     if(difAge<0) {throw new DateTimeException(comment);}
     if(difAge==0 && difMes<0) {throw new DateTimeException(comment);}
     if(difAge==0 && difMes==0 && difDia<0) {throw new DateTimeException(comment);}
+    if(difAge==0 && difMes==0 && difDia>=0) {;}
     //if(difAge<0 || (difAge==0 && difMes <0) || (difAge==0 && difMes==0 && difDia<0)){throw new DateTimeException(comment);}
     }
 
