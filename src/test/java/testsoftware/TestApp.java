@@ -6,6 +6,8 @@ import org.testng.annotations.Test;
 
 import software.Consulta;
 import software.User;
+
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 public class TestApp {
     @Test
@@ -75,13 +77,15 @@ public class TestApp {
         User chahua = new User(29,3,2001);
         User chahua1 = new User(29,3,2010);
         User chahua2 = new User(11,5,2011);
+        User chahua3 = new User(11,5,2011);
         Consulta consulta = new Consulta(4,3,2000,chahua);
         Consulta consulta1 = new Consulta(4,2,2010,chahua1);
         Consulta consulta2 = new Consulta(4,5,2011,chahua2);
-        Consulta consulta3 = new Consulta(15,5,2011,chahua2);
+        Consulta consulta3 = new Consulta(30,5,1999,chahua3);
         assertThrows(DateTimeException.class, ()->consulta.anteriorNacimiento());
         assertThrows(DateTimeException.class, ()->consulta1.anteriorNacimiento());
         assertThrows(DateTimeException.class, ()->consulta2.anteriorNacimiento());
+        assertThrows(DateTimeException.class, ()->consulta3.anteriorNacimiento());
        
     }
   
