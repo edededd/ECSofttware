@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import software.Consulta;
 import software.User;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 public class TestApp {
     @Test
     public void testOlder(){
@@ -32,7 +33,7 @@ public class TestApp {
 
     }
 
-    @Test(expectedExceptions = DateTimeException.class)
+    @Test
     public void testFormato(){
         //test exceptions
         User chahua = new User(29,3,999);
@@ -44,15 +45,15 @@ public class TestApp {
         Consulta consulta = new Consulta(1,6,2020,chahua);
         Consulta consulta1 = new Consulta(1,34,10000,chahua1);
         Consulta consulta2 = new Consulta(1,10,2019,chahua2);
-        Consulta consulta3 = new Consulta(1,10,2019,chahua3);
+        Consulta consulta3 = new Consulta(1,10,2025,chahua3);
         Consulta consulta4 = new Consulta(1,10,2019,chahua4);
         Consulta consulta5 = new Consulta(1,10,2019,chahua5);
-        consulta.correctoFormato();
-        consulta1.correctoFormato();
-        consulta2.correctoFormato();
-        consulta3.correctoFormato();
-        consulta4.correctoFormato();
-        consulta5.correctoFormato();
+        assertThrows(DateTimeException.class, ()->consulta.correctoFormato());
+        assertThrows(DateTimeException.class, ()->consulta1.correctoFormato());
+        assertThrows(DateTimeException.class, ()->consulta2.correctoFormato());
+        assertThrows(DateTimeException.class, ()->consulta3.correctoFormato());
+        assertThrows(DateTimeException.class, ()->consulta4.correctoFormato());
+        assertThrows(DateTimeException.class, ()->consulta5.correctoFormato());
 
     }
 
@@ -77,10 +78,11 @@ public class TestApp {
         Consulta consulta = new Consulta(4,3,2000,chahua);
         Consulta consulta1 = new Consulta(4,2,2010,chahua1);
         Consulta consulta2 = new Consulta(4,5,2011,chahua2);
+        Consulta consulta3 = new Consulta(15,5,2011,chahua2);
         consulta.anteriorNacimiento();
         consulta1.anteriorNacimiento();
         consulta2.anteriorNacimiento();
-
+        consulta3.anteriorNacimiento();
     }
   
 }
