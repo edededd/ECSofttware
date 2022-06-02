@@ -7,7 +7,6 @@ import org.testng.annotations.Test;
 import software.Consulta;
 import software.User;
 
-import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 public class TestApp {
     @Test
